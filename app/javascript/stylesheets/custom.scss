@@ -1,0 +1,25 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+.bg-dark {
+  background-color: black !important;
+}
+
+.jumbotron {
+  background-image: url("~images/home-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 435px;
+}
+
+#page-container {
+  flex: 1 0 auto;
+  background-color: lightgray;
+}
+
+#sticky-footer {
+  flex-shrink: 0;
+}
