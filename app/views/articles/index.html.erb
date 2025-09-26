@@ -17,17 +17,17 @@
         <td><%= article.title %></td>
         <td><%= article.description %></td>
         <td>
-          <button class="action-button action-button-show">
+          <button>
             <%= link_to 'Show', article %>
           </button>
         </td>
         <td>
-          <button class="action-button action-button-edit">
+          <button>
             <%= link_to 'Edit', edit_article_path(article) %>
           </button>
         </td>
         <td>
-            <%= button_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'action-button action-button-cancel' %>
+            <%= button_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Article', new_article_path, { class: 'action-button' } %>
+<%= link_to 'New Article', new_article_path %>
