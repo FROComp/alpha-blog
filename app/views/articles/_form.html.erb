@@ -1,27 +1,26 @@
 <%= form_with(model: article) do |form| %>
-  <% if article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+  <%= render 'shared/errors', article: article %>
 
-      <ul>
-        <% article.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+  <div class="container bg-info rounded mt-4 p-4">
+    <div class="field row mb-4">
+      <div class="col-1">
+        <%= form.label :title, class: "text-white" %>
+      </div>
+      <div class="col-11">
+        <%= form.text_field :title, placeholder: "Title of content", class: "form-control input-group input-group-lg" %>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="field row">
+      <div class="col-1">
+        <%= form.label :description, class: "text-white" %>
+      </div>
+      <div class="col-11">
+        <%= form.text_area :description, placeholder: "Description", rows: "10", class: "form-control input-group input-group-lg" %>
+      </div>
+    </div>
+    <div class="actions text-center">
+      <%= form.submit class: "btn btn-outline-light mt-4" %>
+    </div>
   </div>
 <% end %>
