@@ -1,0 +1,36 @@
+<%= form_with(model: @user) do |form| %>
+  <%= render 'shared/errors', obj: @user %>
+
+  <div class="container bg-info rounded mt-4 p-4">
+    <div class="field row mb-4">
+      <div class="col-1">
+        <%= form.label :username, class: "text-white" %>
+      </div>
+      <div class="col-11">
+        <%= form.text_field :username, placeholder: "Enter a username", class: "form-control input-group input-group-lg" %>
+      </div>
+    </div>
+
+    <div class="field row mb-4">
+      <div class="col-1">
+        <%= form.label :email, class: "text-white" %>
+      </div>
+      <div class="col-11">
+        <%= form.text_field :email, placeholder: "Enter your email address", class: "form-control input-group input-group-lg" %>
+      </div>
+    </div>
+
+    <div class="field row mb-4">
+      <div class="col-1">
+        <%= form.label :password, class: "text-white" %>
+      </div>
+      <div class="col-11">
+        <%= form.password_field :password, placeholder: "Choose a password", class: "form-control input-group input-group-lg" %>
+      </div>
+    </div>
+
+    <div class="actions text-center">
+      <%= form.submit class: "btn btn-outline-light mt-4" %>
+    </div>
+  </div>
+<% end %>
