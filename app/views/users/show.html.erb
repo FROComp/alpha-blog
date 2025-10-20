@@ -1,0 +1,15 @@
+<div id="page-container">
+  <div class="container-sm mt-4 mb-4">
+    <h1 class="h1 text-center"><%= @user.username %>'s profile</h1>
+
+    <%= gravatar_for(@user) %>
+
+    <% if @user.articles.any? %>
+      <h2 class="h3 my-5 text-center">Articles by <%= @user.username %>:</h2> 
+  
+      <% @user.articles.each do |article| %>
+        <%= render 'articles/article-card', article: article %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
