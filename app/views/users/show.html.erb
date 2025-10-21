@@ -4,6 +4,10 @@
 
     <%= gravatar_for(@user) %>
 
+    <div class="text-center mt-4">
+      <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-outline-info" %>
+    </div>
+
     <% if @user.articles.any? %>
       <h2 class="h3 my-5 text-center">Articles by <%= @user.username %>:</h2> 
   
