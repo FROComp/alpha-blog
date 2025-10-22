@@ -10,8 +10,8 @@
 
     <% if @user.articles.any? %>
       <h2 class="h3 my-5 text-center">Articles by <%= @user.username %>:</h2> 
-  
-      <% @user.articles.each do |article| %>
+      <%= paginate @articles %>
+      <% @articles.each do |article| %>
         <%= render 'articles/article-card', article: article %>
       <% end %>
     <% end %>
