@@ -8,6 +8,10 @@ module UsersHelper
   end
 
   def can_edit_user?(user)
-    logged_in? && current_user.id == user.id
+    logged_in? && (current_user.id == user.id || current_user.admin?)
+  end
+
+  def admin_user?(user)
+    logged_in? && current_user.admin?
   end
 end

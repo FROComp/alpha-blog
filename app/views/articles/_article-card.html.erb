@@ -8,14 +8,14 @@
     <h5 class="card-title text-success"><%= article.title %></h5>
     <p class="card-text"><%= truncate(article.description, length: 100) %></p>
     <div class="row justify-content-center">
-      <div class="col col col-lg-1">
+      <div class="mx-2">
         <%= link_to 'View', article, class: "btn btn-outline-success" %>
       </div>
       <% if can_modify_article?(article) %>
-        <div class="col col col-lg-1">
+        <div class="mx-2">
           <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-primary" %>
         </div>
-        <div class="col col col-lg-1">
+        <div class="mx-2">
           <%= button_to 'Destroy', article, method: :delete, class: "btn btn-outline-danger", data: { confirm: 'Are you sure?' } %>
         </div>
       <% end %>
